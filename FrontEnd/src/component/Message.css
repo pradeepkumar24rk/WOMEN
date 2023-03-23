@@ -1,0 +1,92 @@
+.message{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 70vh;
+    margin-top: 3rem;
+    padding: 0 3rem 0 3rem;
+    /* background-color: rgb(48, 46, 46);; */
+    color: #e4fedd;
+}
+.m-left{
+    flex: 1;
+    display: flex;
+    text-align: center;
+    /* background: red; */
+    flex-direction: column;
+    /* align-items: center; */
+    position: relative;
+    top:-4rem;
+}
+.l1
+{
+    font-size: 4rem;
+    font-weight: bold;
+}
+.l2{
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--lgreen);
+}
+
+.m-right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 5rem;
+}
+.m-right>form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+.m-right .user{
+    width: 20rem;
+    height: 5rem;
+    padding: 0.3em;
+    outline: none;
+    border: 3px solid rgba(163, 84, 84, 0.8);
+    border-radius: 8px;
+    font-size: 16px;
+    /* margin-top: 5rem; */
+}
+textarea{
+     height: 6rem !important;
+}
+.c-blurl{
+    top: 1rem;
+    left: 8rem;
+}
+.s-blurl{
+    left: -210px;
+    top: 100px;
+}
+.button{
+    border-radius: 34px;
+    border: none;
+    font-size: 16px;
+    padding: 11px 26px 11px 26px;
+    background: linear-gradient(180deg,#4cf777 26.71%,#21e96e 99.36%);
+    box-shadow: 0px 1px 15px 3px rgba(20, 238, 129, 0.42);
+    color: #e4fedd;
+  }
+  .button:hover{
+    background:white;
+    cursor:pointer;
+    color:var(--blue);
+    border:1px solid var(--lgreen);
+  }
+  
+  .blur{
+    position: absolute;
+    width: 22rem;
+    height: 14rem;
+    border-radius: 50%;
+    background:#edd0ff ;
+    z-index: -9;
+    top: -18%;
+    left: 56%;
+    filter: blur(72px);
+  }
