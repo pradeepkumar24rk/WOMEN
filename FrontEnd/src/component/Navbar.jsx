@@ -1,11 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const link={
-    textDecoration:"none",
-    color:"white"
-}
 
 const Navbar = () => {
   return (
@@ -13,9 +9,9 @@ const Navbar = () => {
         <Left>
             <nav>
                 <ul>
-                    <Link to='/Home' style={link}><li>Home</li></Link>  
-                    <Link to='/Career' style={link}><li>careerguide</li></Link>
-                    <Link to='/Thoughts' style={link}><li>Thoughts</li></Link>
+                    <Nav to='/Home' ><li>Home</li></Nav>  
+                    <Nav to='/Career' ><li>careerguide</li></Nav>
+                    <Nav to='/Thoughts' ><li>Thoughts</li></Nav>
                 </ul>
             </nav>
 
@@ -73,6 +69,24 @@ const Left=styled.div`
       }  
     }
 
+`
+const Nav=styled(NavLink)`
+  text-decoration: none;
+    color:white;
+    &.active{
+       /* background-color: red; */
+       position: relative;
+       &::before{
+        content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            top: 25px;
+            transition: 0.5s;
+            /* color: red; */
+            background-color: #a19c9c;
+       }
+    }
 `
 const Middle=styled.div`
     font-family: Georgia, 'Times New Roman', Times, serif;
