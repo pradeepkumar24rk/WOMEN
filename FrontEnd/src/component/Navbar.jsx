@@ -1,12 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from './auth';
 
 
 const Navbar = () => {
+    const auth=useAuth();
+    const navigate=useNavigate();
+    const handleLogout=()=>{
+        auth.user=null;
+        navigate('/');
+
+    }
   return (
     <Container>
-        <Left>
+       {auth.user && 
+       <Left>
             <nav>
                 <ul>
                     <Nav to='/Home' ><li>Home</li></Nav>  
@@ -16,11 +25,14 @@ const Navbar = () => {
             </nav>
 
         </Left>
+       } 
         <Middle>
             <Span>Women Journey</Span>
         </Middle>
         <Right>
-            <Span>Madhumitha</Span>
+            {!auth.user ?
+                <Nav to='/'>Login</Nav> : <Span onClick={handleLogout} style={{cursor:'pointer'}}>{auth.user}</Span>
+            }
         </Right>
       
     </Container>
