@@ -4,9 +4,11 @@ const WomenSchema=new mongoose.Schema(
     {                                                                     //objects
         
         name:{type:String,required:true},
+        img:{type:String,required:true},
         age:{type:String,required:true},
         expirence:{type:String,required:true},
         dob:{type:String,required:true},
+        rol:{type:String,required:true},
         desc:{type:String,required:true},
         
     },
