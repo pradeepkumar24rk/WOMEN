@@ -15,7 +15,7 @@ const NavPage = () => {
             <Route path='/Home' element={<Home/>}/>
             <Route path='/Career' element={<Career/>}/>
             <Route path='/Thoughts' element={<Thoughts/>}/>
-            <Route path='/About' element={<About/>}/>
+            <Route path='/About/:searchInput' element={<About/>}/>
         </Routes>
     </div>
   )
