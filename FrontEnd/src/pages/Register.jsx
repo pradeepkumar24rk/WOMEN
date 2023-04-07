@@ -20,8 +20,15 @@ background: linear-gradient(
 
 const Wrapper = styled.div`
 width: 40%;
-padding: 20px;
+padding: 50px;
 background-color:white;
+background: rgba( 2, 2, 2, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 0px );
+-webkit-backdrop-filter: blur( 0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+color: white;
 `;
 
 const Form = styled.form`
@@ -30,7 +37,7 @@ flex-wrap:wrap;
 `;
 
 const Title = styled.h1`
-font-size:24px;
+font-size:44px;
 font-weight:300;
 
 `;
@@ -40,6 +47,9 @@ flex: 1;
 min-width:40%;
 margin:20px 10px 0px 0px;
 padding:10px;
+&:focus{
+  outline: none;
+}
 
 `;
 
@@ -54,9 +64,12 @@ const Button = styled.button`
 width:40%;
 border:none;
 padding:15px 20px;
-background-color:teal;
+background-color:black;
 color:white;
 cursor:pointer;
+&:hover{
+  background-color: #818181;
+}
 
 
 `;
