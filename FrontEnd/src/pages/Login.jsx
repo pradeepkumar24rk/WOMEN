@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { useState } from "react";
 import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import { useAuth } from "../component/auth";
 
 const Container = styled.div`
 // width: 100vw;
@@ -27,8 +28,6 @@ height: 400px;
 background-color:white;
 box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 border-radius: 20px;
-
-margin-left: 190px;
 
 `;
 const link ={
@@ -79,6 +78,9 @@ margin-bottom:10px;
 const Login = () => {
   const [reg,setReg]=useState({name:"",password:""});
   const navigate = useNavigate();
+  const auth=useAuth();
+
+
   const handleSubmit=(e)=>{
     e.preventDefault();
     console.log(reg);
@@ -86,8 +88,9 @@ const Login = () => {
       username:reg.name,
       password:reg.password
     })
-      .then(response=>{
-        console.log(response);
+      .then(res=>{
+        console.log(res.data.username);
+        auth.login(res.data.username)
         navigate("/Home")
       })
       .catch(error=>{
