@@ -2,17 +2,20 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import {AiOutlineSend} from 'react-icons/ai'
 import axios from 'axios'
+import { useAuth } from './auth'
 
 const SendComment = () => {
+    const auth=useAuth()
     const [comment,setComment]=useState('')
     const handlecomment=(e)=>{
         e.preventDefault();
         console.log(comment);
       axios.post('http://localhost:5001/api/post/comments',{
+            username:auth.user,
             comment:comment,
       })
       .then((res)=>{
-        console.log(res);
+        console.log(res.data);
         setComment("");
       })
       .catch((err)=>{
