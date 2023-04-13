@@ -3,6 +3,7 @@ const router=require("express").Router();
 
 router.post('/comments',async(req,res)=>{
     const newPostcom=new Comment({
+        username:req.body.username,
         commentPost:req.body.comment,
     });
     console.log(req.body.comment);
