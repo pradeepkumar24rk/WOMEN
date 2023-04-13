@@ -1,4 +1,5 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 const DisplayComment = () => {
@@ -28,13 +29,24 @@ const DisplayComment = () => {
             Comment:'I am madhu'
         },
     ]
+    const [comment,setComment]=useState([]);
+    useEffect(()=>{
+        axios.get('http://localhost:5001/api/post/get/comments')
+        .then((res)=>{
+            setComment(res.data);
+            console.log(res.data);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    },[])
   return (
     <Container>
     {
-        comments.map(data=>
+        comment.map(data=>
             <Dis>
-            <Name>{data.Username}</Name>
-            <Desc>{data.Comment}</Desc>
+            <Name>{data.username}</Name>
+            <Desc>{data.commentPost}</Desc>
             <hr></hr>
             </Dis>
         )
