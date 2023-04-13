@@ -1,7 +1,8 @@
 const mongoose=require("mongoose");
 
 const CommentSchema=new mongoose.Schema(
-    {                                                                     //objects
+    {       
+        username:{type:String,required:true},                                                              //objects
         commentPost:{ type:String, required:true,},
         
     },
