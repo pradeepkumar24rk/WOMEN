@@ -21,7 +21,6 @@ background: linear-gradient(
 const Wrapper = styled.div`
 width: 40%;
 padding: 50px;
-background-color:white;
 background: rgba( 2, 2, 2, 0.25 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 0px );
