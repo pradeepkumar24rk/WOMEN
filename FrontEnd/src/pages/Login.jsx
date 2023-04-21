@@ -22,12 +22,16 @@ overflow-y:hidden;
 `;
 
 const Wrapper = styled.div`
-width: 25%;
+width: 35%;
 padding: 20px;
 height: 400px;
-background-color:white;
-box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-border-radius: 20px;
+background: rgba( 2, 2, 2, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 0px );
+-webkit-backdrop-filter: blur( 0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+color: white;
 
 `;
 const link ={
@@ -56,8 +60,14 @@ const Input = styled.input`
 flex: 1;
 min-width:40%;
 margin:10px  0px;
-padding:20px;
-font-size: 18px;
+padding:14px;
+font-size: 15px;
+border-radius: 10px;
+border: 2px solid gray;
+&:focus{
+border-color: #d1d1d1;
+outline: none;
+}
 
 `;
 
@@ -111,7 +121,7 @@ const Login = () => {
               }
             }/>
             <Input placeholder="Password"
-            type={Text}
+            type={"password"}
             value={reg.password}
             onChange={
               (e)=>{

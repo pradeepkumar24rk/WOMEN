@@ -16,7 +16,7 @@ const About = () => {
 
   useEffect(()=>{
     const url=`http://localhost:5001/api/data/women/${searchInput}`
-    console.log(url);
+    // console.log(url);
     axios.get(url)
     .then((res)=>{
       setDetails(res.data);
@@ -26,7 +26,7 @@ const About = () => {
       console.log(err);
     })
   },[searchInput])
-  console.log(details);
+  // console.log(details);
   return (
           <div className='about' id='About'>
               

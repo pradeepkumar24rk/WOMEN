@@ -10,7 +10,7 @@ const MainPage = () => {
         <div>
             <Navbar/>
         </div>
-        <div className='np'>
+        <div style={{overflow:'hidden'}}>
             <NavPage/>
         </div>
         <div>

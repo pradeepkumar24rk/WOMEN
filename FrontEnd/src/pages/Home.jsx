@@ -1,14 +1,15 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 import {BsSearch} from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const [searchInput,setSearchInput]=useState('');
   const navigate = useNavigate();
   const handleSearch=(e)=>{
     e.preventDefault();
-    navigate('/about')
-    
+
+    navigate(`/About/${searchInput}`)    
 }
   return (
     <Container>
@@ -17,7 +18,7 @@ const Home = () => {
             Women
         </Span>
         <Search onSubmit={handleSearch}>
-            <Input type='text' placeholder='Search Women Jouney'></Input>
+            <Input type='text' placeholder='Search Women Jouney' required  value={searchInput} onChange={(e)=>{setSearchInput(e.target.value)}}></Input>
             <BsSearch  style={{color:"white",fontSize:25,marginRight:20}}/>
             <button type='submit'></button>
         </Search>

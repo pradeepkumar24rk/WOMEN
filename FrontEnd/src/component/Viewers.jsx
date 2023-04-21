@@ -10,7 +10,11 @@ const Viewers = () => {
           preLoad="auto"
           loop
         > something</video> */}
-            <img src="/images/viewers-disney.png" alt="" srcset="" />
+            {/* <img src="/images/viewers-disney.png" alt="" srcset="" /> */}
+            <Word>
+
+            Machine Learing
+            </Word>
         </Wrap>
         <Wrap>
             <img src="/images/viewers-pixar.png" alt="" srcset="" />
@@ -46,6 +50,9 @@ border-radius:10px;
 box-shadow:rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
 cursor:pointer;
 transition:all 250ms cubic-bezier(0.25,0.46,0.45,0.94) 0s;
+display: flex;
+align-items: center;
+justify-content: center;
 
  img{
     width:100%;
@@ -65,4 +72,12 @@ video{
      transform:scale(1.05);
      border-color:rgba(249,249 ,249,0.8)
  }
+`
+const Word=styled.span`
+    color:white;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    
+
 `

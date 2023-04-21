@@ -6,6 +6,7 @@ import Home from './Home'
 import Career from './Career'
 import Thoughts from './Thoughts'
 import About from '../component/About'
+import PostPerson from './PostPerson'
 const NavPage = () => {
   return (
     <div className='NavPage'>
@@ -16,6 +17,7 @@ const NavPage = () => {
             <Route path='/Career' element={<Career/>}/>
             <Route path='/Thoughts' element={<Thoughts/>}/>
             <Route path='/About/:searchInput' element={<About/>}/>
+            <Route path='/PostPerson' element={<PostPerson/>}/>
         </Routes>
     </div>
   )
