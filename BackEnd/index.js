@@ -1,8 +1,10 @@
 const express=require("express");
 const app= express();
 const mongoose=require("mongoose");
+
 const dotenv=require("dotenv");            
-dotenv.config();                            
+dotenv.config();  
+
 var cors = require('cors')
 app.use(cors());
 
@@ -22,7 +24,7 @@ console.log("successfully")
 }))
 
 
-app.use(express.json());                   
+app.use(express.json());              //we should input in json format      
 
 app.use('/api/auth',authRoute);
 app.use('/api/data',womenRoute);
